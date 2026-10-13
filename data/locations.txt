@@ -1,0 +1,18 @@
+LOCATIONS:
+Entrance,Reception,Main facility reception and check-in
+Packing-Station,Dispatch,Order packing verification and outbound staging
+Loading-Dock,Freight,Heavy cargo freight bays and truck loading
+Aisle-A,Heavy Machinery,Electric motors and hydraulic actuators
+Aisle-B,Hardware,Precision bearings fasteners and mounts
+Aisle-C,Electronics,Measurement meters calibration gear and micro-controllers
+Aisle-D,Safety,PPE gear helmets gloves and hazard suits
+PATHS:
+Entrance,Packing-Station,10
+Entrance,Aisle-A,15
+Packing-Station,Loading-Dock,20
+Packing-Station,Aisle-B,16
+Packing-Station,Aisle-C,15
+Loading-Dock,Aisle-D,18
+Aisle-A,Aisle-B,12
+Aisle-B,Aisle-C,14
+Aisle-C,Aisle-D,10

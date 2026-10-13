@@ -1,0 +1,4 @@
+admin,admin123,System Administrator,System Administrator
+manager,manager123,Store Manager,Store Manager Alice
+cashier,cashier123,Cashier,Cashier Bob
+Moletsane,1234,Cashier,Thaane Abraham Moletsane

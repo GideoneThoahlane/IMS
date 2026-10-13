@@ -1,0 +1,66 @@
+2026-10-12 08:00:00|admin|System Administrator|SYSTEM_BOOT|Inventory Management System initialized
+2026-10-12 08:05:12|admin|System Administrator|AUTH_LOGIN_SUCCESS|Admin authenticated into control workstation
+2026-10-12 08:30:00|cashier|Cashier|ORDER_ENQUEUED|Order ORD-1001 enqueued for Apex Robotics Ltd
+2026-10-12 08:31:45|cashier|Cashier|ORDER_PROCESSED|Fulfilled order ORD-1001 (2 units of ITEM101)
+2026-10-12 09:15:00|cashier|Cashier|ORDER_ENQUEUED|Order ORD-1002 enqueued for Vanguard Automation
+2026-10-12 10:00:00|manager|Store Manager|RESTOCK_REQUESTED|Restock REQ-501 (High) created for ITEM107
+2026-10-12 12:28:11|manager|Store Manager|AUTH_LOGIN_SUCCESS|User logged in successfully
+2026-10-12 12:28:11|manager|Store Manager|ITEM_CREATE|Added item: ITEM999 (Turbine Calibration Sensor)
+2026-10-12 12:28:11|manager|Store Manager|ORDER_ENQUEUED|Order ORD-1001 placed for 5 x ITEM999
+2026-10-12 12:28:11|manager|Store Manager|ORDER_PROCESSED|Processed order ORD-1001 (Apex Robotics Ltd)
+2026-10-12 12:28:11|cashier|Cashier|AUTH_LOGIN_SUCCESS|User logged in successfully
+2026-10-12 12:28:11|cashier|Cashier|AUTH_UNAUTHORIZED_ACCESS|Denied access to action: TEST_AUDIT (Requires Level 3)
+2026-10-12 12:28:11|cashier|Cashier|AUTH_UNAUTHORIZED_ACCESS|Denied access to action: DELETE_ITEM (Requires Level 2)
+2026-10-12 12:28:12|admin|System Administrator|AUTH_LOGIN_SUCCESS|User logged in successfully
+2026-10-12 12:28:12|admin|System Administrator|ITEM_DELETE|Deleted item: ITEM999 (Turbine Calibration Sensor)
+2026-10-12 12:35:16|manager|Store Manager|AUTH_LOGIN_SUCCESS|User logged in successfully
+2026-10-12 12:35:16|manager|Store Manager|ITEM_CREATE|Added item: ITEM999 (Turbine Calibration Sensor)
+2026-10-12 12:35:16|manager|Store Manager|ORDER_ENQUEUED|Order ORD-1001 placed for 5 x ITEM999
+2026-10-12 12:35:16|manager|Store Manager|ORDER_PROCESSED|Processed order ORD-1002 (Vanguard Automation)
+2026-10-12 12:35:16|cashier|Cashier|AUTH_LOGIN_SUCCESS|User logged in successfully
+2026-10-12 12:35:16|cashier|Cashier|AUTH_UNAUTHORIZED_ACCESS|Denied access to action: TEST_AUDIT (Requires Level 3)
+2026-10-12 12:35:16|cashier|Cashier|AUTH_UNAUTHORIZED_ACCESS|Denied access to action: DELETE_ITEM (Requires Level 2)
+2026-10-12 12:35:16|admin|System Administrator|AUTH_LOGIN_SUCCESS|User logged in successfully
+2026-10-12 12:35:16|admin|System Administrator|ITEM_DELETE|Deleted item: ITEM999 (Turbine Calibration Sensor)
+2026-10-12 12:46:49|manager|Store Manager|AUTH_LOGIN_SUCCESS|Logged in successfully
+2026-10-12 12:46:49|manager|Store Manager|ITEM_CREATE|Added: ITEM999 (Turbine Calibration Sensor)
+2026-10-12 12:46:49|manager|Store Manager|ORDER_ENQUEUED|Order ORD-1001 for 5x ITEM999
+2026-10-12 12:46:49|manager|Store Manager|ORDER_PROCESSED|Processed ORD-1003 (Metropolitan Fab Lab)
+2026-10-12 12:46:49|cashier|Cashier|AUTH_LOGIN_SUCCESS|Logged in successfully
+2026-10-12 12:46:49|cashier|Cashier|AUTH_UNAUTHORIZED_ACCESS|Denied: TEST_AUDIT (Requires Level 3)
+2026-10-12 12:46:49|cashier|Cashier|AUTH_UNAUTHORIZED_ACCESS|Denied: DELETE_ITEM (Requires Level 2)
+2026-10-12 12:46:49|admin|System Administrator|AUTH_LOGIN_SUCCESS|Logged in successfully
+2026-10-12 12:46:49|admin|System Administrator|ITEM_DELETE|Deleted: ITEM999 (Turbine Calibration Sensor)
+2026-10-12 12:48:13|manager|Store Manager|AUTH_LOGIN_SUCCESS|Logged in successfully
+2026-10-12 12:48:13|manager|Store Manager|ITEM_CREATE|Added: ITEM999 (Turbine Calibration Sensor)
+2026-10-12 12:48:13|manager|Store Manager|ORDER_ENQUEUED|Order ORD-1001 for 5x ITEM999
+2026-10-12 12:48:13|manager|Store Manager|ORDER_PROCESSED|Processed ORD-1004 (Nordic Precision Works)
+2026-10-12 12:48:13|cashier|Cashier|AUTH_LOGIN_SUCCESS|Logged in successfully
+2026-10-12 12:48:13|cashier|Cashier|AUTH_UNAUTHORIZED_ACCESS|Denied: TEST_AUDIT (Requires Level 3)
+2026-10-12 12:48:13|cashier|Cashier|AUTH_UNAUTHORIZED_ACCESS|Denied: DELETE_ITEM (Requires Level 2)
+2026-10-12 12:48:13|admin|System Administrator|AUTH_LOGIN_SUCCESS|Logged in successfully
+2026-10-12 12:48:13|admin|System Administrator|ITEM_DELETE|Deleted: ITEM999 (Turbine Calibration Sensor)
+2026-10-12 12:48:30|manager|Store Manager|AUTH_LOGIN_SUCCESS|Logged in successfully
+2026-10-12 12:48:58|admin|System Administrator|AUTH_LOGIN_SUCCESS|Logged in successfully
+2026-10-12|manager|Store Manager|AUTH_LOGIN|Login success
+2026-10-12|manager|Store Manager|ITEM_CREATE|Added: ITEM999
+2026-10-12|manager|Store Manager|ORDER_ENQUEUED|Order ORD-1001 for ITEM999
+2026-10-12|manager|Store Manager|ORDER_PROCESSED|Processed ORD-1001
+2026-10-12|cashier|Cashier|AUTH_LOGIN|Login success
+2026-10-12|cashier|Cashier|AUTH_DENIED|TEST_AUDIT
+2026-10-12|cashier|Cashier|AUTH_DENIED|DELETE_ITEM
+2026-10-12|admin|System Administrator|AUTH_LOGIN|Login success
+2026-10-12|admin|System Administrator|ITEM_DELETE|Deleted: ITEM999
+2026-10-12|manager|Store Manager|AUTH_LOGIN|Login success
+2026-10-12|manager|Store Manager|AUTH_LOGOUT|User logged out
+2026-10-12|cashier|Cashier|AUTH_LOGIN|Login success
+2026-10-12|cashier|Cashier|AUTH_LOGOUT|User logged out
+2026-10-12|manager|Store Manager|AUTH_LOGIN|Login success
+2026-10-12|manager|Store Manager|AUTH_LOGOUT|User logged out
+2026-10-12||Cashier|USER_REGISTER|Created: Moletsane
+2026-10-12|Moletsane|Cashier|AUTH_LOGIN|Login success
+2026-10-12|Moletsane|Cashier|ORDER_PLACED|Order ORD-1001 for ITEM101
+2026-10-12|Moletsane|Cashier|AUTH_LOGOUT|User logged out
+2026-10-12|admin|System Administrator|AUTH_LOGIN|Login success
+2026-10-12|admin|System Administrator|ITEM_CREATE|Added: ITEM909
+2026-10-12|admin|System Administrator|AUTH_LOGOUT|User logged out
