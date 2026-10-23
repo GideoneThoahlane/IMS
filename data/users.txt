@@ -1,4 +1,4 @@
-admin,admin123,System Administrator,System Administrator
-manager,manager123,Store Manager,Store Manager Alice
-cashier,cashier123,Cashier,Cashier Bob
-Moletsane,1234,Cashier,Thaane Abraham Moletsane
+
+Palesa,M1234,Store Manager,Palesa Selepe
+Neo,C1234,Cashier,Neo Sello
+Bob,A1234,System Administrator,Bob Tau

@@ -1,11 +1,6 @@
-ITEM101,Industrial Motor 5HP,Heavy Machinery,16,485.500000,Aisle-A-Bay-1
-ITEM102,Hydraulic Valve Assembly,Pneumatics & Hydraulics,35,124.990000,Aisle-A-Bay-3
-ITEM103,Precision Steel Bearing,Fasteners & Bearings,105,18.750000,Aisle-B-Bay-2
-ITEM104,Digital Multimeter Pro,Electronics & Instrumentation,41,89.000000,Aisle-C-Bay-1
-ITEM105,Safety Helmet Hardhat,Personal Protective Equipment,80,24.500000,Aisle-D-Bay-4
-ITEM106,Industrial Torque Wrench,Hand Tools,27,115.000000,Aisle-C-Bay-3
-ITEM107,Laser Distance Meter,Electronics & Instrumentation,14,149.950000,Aisle-C-Bay-2
-ITEM108,High-Tensile Hex Bolt M12,Fasteners & Bearings,500,2.150000,Aisle-B-Bay-1
-ITEM109,Rotary Hammer Drill,Power Tools,12,229.000000,Aisle-A-Bay-2
-ITEM110,Chemical Resistant Gloves,Personal Protective Equipment,150,12.800000,Aisle-D-Bay-2
-ITEM909,Papa ka nama,Food,6,50.000000,Aisle-6-Bay-2
+ITEM103,Sugar 2kg,Sugar & Baking,105,18.750000,Column 2-Shelf 2
+ITEM104,Cooking Oil 2L,Oil & Condiments,0,89.000000,Column 3-Shelf 1
+ITEM105,White Bread,Bakery,80,24.500000,Column 4-Shelf 4
+ITEM106,Long Grain Rice 5kg,Grains & Cereals,27,115.000000,Column 3-Shelf 3
+ITEM107,Full Cream Milk 1L,Dairy Products,14,149.950000,Column 3-Shelf 2
+ITEM102,Maize Meal,Grains & Cereals,53,124.990000,Column 1-Shelf 3

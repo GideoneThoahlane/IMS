@@ -118,8 +118,8 @@ public:
             return false;
         }
 
-        static int ordIdCounter = 1000;
-        string ordId = "ORD-" + to_string(++ordIdCounter);
+        int nextIdNum = orderQueue.getMaxOrderIdNumber() + 1;
+        string ordId = "ORD-" + to_string(nextIdNum);
         Order ord(ordId, customerName, itemId, qty, it->getUnitPrice(), "2026-10-12", "Pending");
 
         orderQueue.enqueue(ord);
@@ -348,7 +348,7 @@ public:
 
     void viewAuditTrail() {
         if (!authManager.checkPermission(3, "VIEW_AUDIT_LOG")) return;
-        auditLog.displayLogs(20);
+        auditLog.displayLogs();
     }
 
     void listUsers() {
@@ -416,7 +416,7 @@ void handleManagerDashboard(InventorySystemApp& app) {
         cout << " 1. View Inventory\n";
         cout << " 2. Search Item\n";
         cout << " 3. Add Item\n";
-        cout << " 4. Update Stock or Price\n";
+        cout << " 4. Update Quantity or Price\n";
         cout << " 5. Delete Item\n";
         cout << " 6. Customer Orders (Place / Fulfill)\n";
         cout << " 7. Priority Restock (Request / Fulfill)\n";

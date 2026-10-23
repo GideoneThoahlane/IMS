@@ -210,27 +210,32 @@ int Graph::getVertexCount() {
 void Graph::loadFromFile(string filePath) {
     clear();
     ifstream inFile(filePath.c_str());
-    if (!inFile.is_open()) {
-        addVertex("Entrance", "Reception", "Main entrance");
-        addVertex("Packing-Station", "Logistics", "Packing area");
-        addVertex("Loading-Dock", "Logistics", "Shipping dock");
-        addVertex("Aisle-A", "Machinery", "Motors & pumps");
-        addVertex("Aisle-B", "Hardware", "Fasteners & bearings");
-        addVertex("Aisle-C", "Electronics", "Meters & instruments");
-        addVertex("Aisle-D", "Safety", "PPE gear & hardhats");
+	if (!inFile.is_open()) {
+    addVertex("Entrance", "Receiving", "Main warehouse entrance");
+    addVertex("Column-A", "Shelves A1-A4", "Laptops and computers");
+    addVertex("Column-B", "Shelves B1-B4", "Keyboards and accessories");
+    addVertex("Column-C", "Shelves C1-C4", "Routers and networking equipment");
+    addVertex("Column-D", "Shelves D1-D4", "Projectors and monitors");
+    addVertex("Column-E", "Shelves E1-E4", "Stationery and office supplies");
+    addVertex("Column-F", "Shelves F1-F4", "Tools and maintenance equipment");
+    addVertex("Dispatch", "Collection", "Items ready for collection");
 
-        addEdge("Entrance", "Aisle-A", 15);
-        addEdge("Entrance", "Packing-Station", 10);
-        addEdge("Aisle-A", "Aisle-B", 12);
-        addEdge("Aisle-B", "Aisle-C", 14);
-        addEdge("Aisle-C", "Aisle-D", 10);
-        addEdge("Aisle-D", "Loading-Dock", 18);
-        addEdge("Packing-Station", "Loading-Dock", 20);
-        addEdge("Aisle-B", "Packing-Station", 16);
-        addEdge("Aisle-C", "Packing-Station", 15);
-        saveToFile(filePath);
-        return;
-    }
+    addEdge("Entrance", "Column-A", 10);
+    addEdge("Entrance", "Column-B", 12);
+    addEdge("Entrance", "Dispatch", 8);
+    addEdge("Column-A", "Column-B", 6);
+    addEdge("Column-A", "Column-C", 10);
+    addEdge("Column-B", "Column-C", 5);
+    addEdge("Column-B", "Column-D", 8);
+    addEdge("Column-C", "Column-D", 6);
+    addEdge("Column-C", "Column-E", 9);
+    addEdge("Column-D", "Column-F", 10);
+    addEdge("Column-E", "Column-F", 7);
+    addEdge("Column-F", "Dispatch", 12);
+
+    saveToFile(filePath);
+    return;
+}
 
     string line;
     bool inPaths = false;

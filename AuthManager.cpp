@@ -1,5 +1,5 @@
 #include "AuthManager.h"
-
+#include <iomanip>
 using namespace std;
 
 AuthManager::AuthManager() {
@@ -22,9 +22,9 @@ void AuthManager::loadUsers() {
     userCount = 0;
     ifstream inFile(usersFilePath.c_str());
     if (!inFile.is_open()) {
-        users[0] = User("admin", "admin123", "System Administrator", "Administrator");
-        users[1] = User("manager", "manager123", "Store Manager", "Alice Manager");
-        users[2] = User("cashier", "cashier123", "Cashier", "Bob Cashier");
+        users[0] = User("admin", "A1234", "System Administrator", "Administrator");
+        users[1] = User("manager", "M1234", "Store Manager", "Manager");
+        users[2] = User("cashier", "C1234", "Cashier", "Cashier");
         userCount = 3;
         saveUsers();
         return;
@@ -129,15 +129,26 @@ bool AuthManager::addUser(string username, string password, string role, string 
 
 void AuthManager::listAllUsers() {
     if (!checkPermission(3, "LIST_USERS")) return;
-    cout << "\n---------------------------------------------------------------\n";
-    cout << "Username        Role                    Full Name\n";
-    cout << "---------------------------------------------------------------\n";
+
+    cout << "\n";
+    cout << string(85, '-') << "\n";
+
+    cout << left
+         << setw(20) << "Username"
+         << setw(28) << "Role"
+         << setw(35) << "Full Name" << "\n";
+
+    cout << string(85, '-') << "\n";
+
     for (int i = 0; i < userCount; ++i) {
-        cout << users[i].getUsername() << "\t\t"
-             << users[i].getRole() << "\t\t"
-             << users[i].getFullName() << "\n";
+        cout << left
+             << setw(20) << users[i].getUsername()
+             << setw(28) << users[i].getRole()
+             << setw(35) << users[i].getFullName()
+             << "\n";
     }
-    cout << "---------------------------------------------------------------\n";
+
+    cout << string(85, '-') << "\n";
 }
 
 int AuthManager::getUserCount() {

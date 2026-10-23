@@ -1,4 +1,5 @@
 #include "Queue.h"
+#include <iomanip>
 
 using namespace std;
 
@@ -34,13 +35,27 @@ string Order::getTimestamp() { return timestamp; }
 string Order::getStatus() { return status; }
 void Order::setStatus(string stat) { status = stat; }
 
+//void Order::display() {
+//    cout << orderId << "\t"
+//         << (customerName.length() > 18 ? customerName.substr(0, 15) + "..." : customerName) << "\t"
+//         << itemId << "\tQty: "
+//         << quantity << "\tTotal: $"
+//         << totalAmount << "\t["
+//         << status << "]\n";
+//}
+
 void Order::display() {
-    cout << orderId << "\t"
-         << (customerName.length() > 18 ? customerName.substr(0, 15) + "..." : customerName) << "\t"
-         << itemId << "\tQty: "
-         << quantity << "\tTotal: $"
-         << totalAmount << "\t["
-         << status << "]\n";
+    string displayCust = (customerName.length() > 24) ? customerName.substr(0, 21) + "..." : customerName;
+    cout << left
+         << setw(12) << orderId
+         << setw(26) << displayCust
+         << setw(12) << itemId
+         << right << setw(6) << quantity
+         << setw(16) << fixed << setprecision(2) << unitPrice
+         << setw(16) << fixed << setprecision(2) << totalAmount
+         << "   "
+         << left << setw(12) << status
+         << "\n";
 }
 
 string Order::serialize() {
@@ -134,20 +149,55 @@ void Queue::clear() {
 }
 
 void Queue::displayAll() {
-    cout << "\n----------------------------------------------------------------------------------------------------\n";
-    cout << "Order ID\tCustomer\t\tItem\tQuantity\tTotal\tStatus\n";
-    cout << "----------------------------------------------------------------------------------------------------\n";
+    cout << "\n";
+    cout << string(103, '-') << "\n";
+    cout << left
+         << setw(12) << "Order ID"
+         << setw(26) << "Customer"
+         << setw(12) << "Item ID"
+         << right << setw(6) << "Qty"
+         << setw(16) << "UnitPrice(M)"
+         << setw(16) << "TotalPrice(M)"
+         << "   "
+         << left << setw(12) << "Status" << "\n";
+    cout << string(103, '-') << "\n";
+
     if (isEmpty()) {
-        cout << "Order queue is empty.\n";
+        cout << "Order queue is empty. No pending orders.\n";
     } else {
         QueueNode* curr = frontNode;
+        double totalQueueValue = 0.0;
         while (curr != nullptr) {
             curr->data.display();
+            totalQueueValue += curr->data.getTotalAmount();
             curr = curr->next;
         }
+        cout << string(103, '-') << "\n";
+        cout << "Total pending orders in FIFO Queue: " << count
+             << " | Total Value: M" << fixed << setprecision(2) << totalQueueValue << "\n";
+        if (frontNode != nullptr) {
+            cout << "Next order to process: [" << frontNode->data.getOrderId()
+                 << "] " << frontNode->data.getCustomerName()
+                 << " (" << frontNode->data.getQuantity() << " x " << frontNode->data.getItemId() << ")\n";
+        }
     }
-    cout << "----------------------------------------------------------------------------------------------------\n";
-    cout << "Total pending orders in FIFO Queue: " << count << "\n";
+    cout << string(103, '-') << "\n";
+}
+
+int Queue::getMaxOrderIdNumber() {
+    int maxId = 1000;
+    QueueNode* curr = frontNode;
+    while (curr != nullptr) {
+        string id = curr->data.getOrderId();
+        if (id.length() > 4 && id.substr(0, 4) == "ORD-") {
+            try {
+                int val = stoi(id.substr(4));
+                if (val > maxId) maxId = val;
+            } catch (...) {}
+        }
+        curr = curr->next;
+    }
+    return maxId;
 }
 
 void Queue::loadFromFile(string filePath) {

@@ -1,5 +1,5 @@
 #include "Tree.h"
-
+#include <iomanip>
 using namespace std;
 
 TreeNode::TreeNode(Item itemVal) {
@@ -127,10 +127,77 @@ void Tree::inorderRecursive(TreeNode* node) {
     }
 }
 
+//void Tree::displayInorder() {
+//    cout << "\n--- BST Inorder Traversal (Sorted Item Keys) ---\n";
+//    cout << "Item ID\tName\t\t\tCategory\t\tStock\tPrice\tLocation\n";
+//    cout << "----------------------------------------------------------------------------------------------------\n";
+//    inorderRecursive(root);
+//}
+//
+//void Tree::preorderRecursive(TreeNode* node) {
+//    if (node != nullptr) {
+//        node->data.display();
+//        preorderRecursive(node->left);
+//        preorderRecursive(node->right);
+//    }
+//}
+//
+//void Tree::displayPreorder() {
+//    cout << "\n--- BST Preorder Traversal (Root-Left-Right) ---\n";
+//    cout << "Item ID\tName\t\t\tCategory\t\tStock\tPrice\tLocation\n";
+//    cout << "----------------------------------------------------------------------------------------------------\n";
+//    preorderRecursive(root);
+//}
+//
+//void Tree::postorderRecursive(TreeNode* node) {
+//    if (node != nullptr) {
+//        postorderRecursive(node->left);
+//        postorderRecursive(node->right);
+//        node->data.display();
+//    }
+//}
+//
+//void Tree::displayPostorder() {
+//    cout << "\n--- BST Postorder Traversal (Left-Right-Root) ---\n";
+//    cout << "Item ID\tName\t\t\tCategory\t\tStock\tPrice\tLocation\n";
+//    cout << "----------------------------------------------------------------------------------------------------\n";
+//    postorderRecursive(root);
+//}
+//
+//void Tree::displayLevelOrder() {
+//    cout << "\n--- BST Level-Order Traversal (Breadth-First BFS) ---\n";
+//    cout << "Item ID\tName\t\t\tCategory\t\tStock\tPrice\tLocation\n";
+//    cout << "----------------------------------------------------------------------------------------------------\n";
+//    if (root == nullptr) return;
+//
+//    // Simple queue array of TreeNode pointers
+//    TreeNode* q[100];
+//    int front = 0;
+//    int rear = 0;
+//
+//    q[rear++] = root;
+//
+//    while (front < rear) {
+//        TreeNode* curr = q[front++];
+//        curr->data.display();
+//
+//        if (curr->left != nullptr && rear < 100) q[rear++] = curr->left;
+//        if (curr->right != nullptr && rear < 100) q[rear++] = curr->right;
+//    }
+//}
+
 void Tree::displayInorder() {
     cout << "\n--- BST Inorder Traversal (Sorted Item Keys) ---\n";
-    cout << "Item ID\tName\t\t\tCategory\t\tStock\tPrice\tLocation\n";
     cout << "----------------------------------------------------------------------------------------------------\n";
+    cout << left
+         << setw(12) << "Item ID"
+         << setw(25) << "Name"
+         << setw(24) << "Category"
+         << setw(8)  << "Stock"
+         << setw(12) << "Price"
+         << "Location\n";
+    cout << "----------------------------------------------------------------------------------------------------\n";
+
     inorderRecursive(root);
 }
 
@@ -144,8 +211,16 @@ void Tree::preorderRecursive(TreeNode* node) {
 
 void Tree::displayPreorder() {
     cout << "\n--- BST Preorder Traversal (Root-Left-Right) ---\n";
-    cout << "Item ID\tName\t\t\tCategory\t\tStock\tPrice\tLocation\n";
     cout << "----------------------------------------------------------------------------------------------------\n";
+    cout << left
+         << setw(12) << "Item ID"
+         << setw(25) << "Name"
+         << setw(24) << "Category"
+         << setw(8)  << "Stock"
+         << setw(12) << "Price"
+         << "Location\n";
+    cout << "----------------------------------------------------------------------------------------------------\n";
+
     preorderRecursive(root);
 }
 
@@ -159,18 +234,36 @@ void Tree::postorderRecursive(TreeNode* node) {
 
 void Tree::displayPostorder() {
     cout << "\n--- BST Postorder Traversal (Left-Right-Root) ---\n";
-    cout << "Item ID\tName\t\t\tCategory\t\tStock\tPrice\tLocation\n";
     cout << "----------------------------------------------------------------------------------------------------\n";
+    cout << left
+         << setw(12) << "Item ID"
+         << setw(25) << "Name"
+         << setw(24) << "Category"
+         << setw(8)  << "Stock"
+         << setw(12) << "Price"
+         << "Location\n";
+    cout << "----------------------------------------------------------------------------------------------------\n";
+
     postorderRecursive(root);
 }
 
 void Tree::displayLevelOrder() {
     cout << "\n--- BST Level-Order Traversal (Breadth-First BFS) ---\n";
-    cout << "Item ID\tName\t\t\tCategory\t\tStock\tPrice\tLocation\n";
     cout << "----------------------------------------------------------------------------------------------------\n";
-    if (root == nullptr) return;
+    cout << left
+         << setw(12) << "Item ID"
+         << setw(25) << "Name"
+         << setw(24) << "Category"
+         << setw(8)  << "Stock"
+         << setw(12) << "Price"
+         << "Location\n";
+    cout << "----------------------------------------------------------------------------------------------------\n";
 
-    // Simple queue array of TreeNode pointers
+    if (root == nullptr) {
+        cout << "Tree is empty.\n";
+        return;
+    }
+
     TreeNode* q[100];
     int front = 0;
     int rear = 0;
@@ -181,7 +274,10 @@ void Tree::displayLevelOrder() {
         TreeNode* curr = q[front++];
         curr->data.display();
 
-        if (curr->left != nullptr && rear < 100) q[rear++] = curr->left;
-        if (curr->right != nullptr && rear < 100) q[rear++] = curr->right;
+        if (curr->left != nullptr && rear < 100)
+            q[rear++] = curr->left;
+
+        if (curr->right != nullptr && rear < 100)
+            q[rear++] = curr->right;
     }
 }

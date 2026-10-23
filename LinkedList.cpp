@@ -1,5 +1,5 @@
 #include "LinkedList.h"
-
+#include <iomanip>
 using namespace std;
 
 ListNode::ListNode(Item itemVal) {
@@ -93,22 +93,52 @@ bool LinkedList::updatePrice(string itemId, double newPrice) {
     return false;
 }
 
+//void LinkedList::displayAll() {
+//    cout << "\n----------------------------------------------------------------------------------------------------\n";
+//    cout << "Item ID\tName\t\t\tCategory\t\tStock\tPrice\tLocation\n";
+//    cout << "----------------------------------------------------------------------------------------------------\n";
+//    if (head == nullptr) {
+//        cout << "Inventory list is empty.\n";
+//    } else {
+//        ListNode* curr = head;
+//        while (curr != nullptr) {
+//            curr->data.display();
+//            curr = curr->next;
+//        }
+//    }
+//    cout << "----------------------------------------------------------------------------------------------------\n";
+//    cout << "Total items: " << count << "\n";
+//}
+
 void LinkedList::displayAll() {
-    cout << "\n----------------------------------------------------------------------------------------------------\n";
-    cout << "Item ID\tName\t\t\tCategory\t\tStock\tPrice\tLocation\n";
-    cout << "----------------------------------------------------------------------------------------------------\n";
+    cout << "\n";
+    cout << string(115, '-') << "\n";
+
+    cout << left
+         << setw(12) << "Item ID"
+         << setw(28) << "Name"
+         << setw(32) << "Category"
+         << right << setw(8) << "Quantity"
+         << setw(12) << "Price\t"
+         << left << setw(20) << "Location" << "\n";
+
+    cout << string(115, '-') << "\n";
+
     if (head == nullptr) {
         cout << "Inventory list is empty.\n";
     } else {
         ListNode* curr = head;
+
         while (curr != nullptr) {
             curr->data.display();
             curr = curr->next;
         }
     }
-    cout << "----------------------------------------------------------------------------------------------------\n";
+
+    cout << string(115, '-') << "\n";
     cout << "Total items: " << count << "\n";
 }
+
 
 void LinkedList::clear() {
     ListNode* curr = head;

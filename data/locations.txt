@@ -1,18 +1,22 @@
 LOCATIONS:
-Entrance,Reception,Main facility reception and check-in
-Packing-Station,Dispatch,Order packing verification and outbound staging
-Loading-Dock,Freight,Heavy cargo freight bays and truck loading
-Aisle-A,Heavy Machinery,Electric motors and hydraulic actuators
-Aisle-B,Hardware,Precision bearings fasteners and mounts
-Aisle-C,Electronics,Measurement meters calibration gear and micro-controllers
-Aisle-D,Safety,PPE gear helmets gloves and hazard suits
+Entrance,Receiving,Main warehouse entrance and goods receiving
+Column-A,Shelves A1-A4,Storage shelves for laptops and computers
+Column-B,Shelves B1-B4,Storage shelves for keyboards mice and accessories
+Column-C,Shelves C1-C4,Storage shelves for routers cables and networking equipment
+Column-D,Shelves D1-D4,Storage shelves for projectors monitors and electronics
+Column-E,Shelves E1-E4,Storage shelves for stationery and office supplies
+Column-F,Shelves F1-F4,Storage shelves for tools and maintenance equipment
+Dispatch,Collection,Approved items ready for collection or delivery
 PATHS:
-Entrance,Packing-Station,10
-Entrance,Aisle-A,15
-Packing-Station,Loading-Dock,20
-Packing-Station,Aisle-B,16
-Packing-Station,Aisle-C,15
-Loading-Dock,Aisle-D,18
-Aisle-A,Aisle-B,12
-Aisle-B,Aisle-C,14
-Aisle-C,Aisle-D,10
+Entrance,Column-A,10
+Entrance,Column-B,12
+Entrance,Dispatch,8
+Column-A,Column-B,6
+Column-A,Column-C,10
+Column-B,Column-C,5
+Column-B,Column-D,8
+Column-C,Column-D,6
+Column-C,Column-E,9
+Column-D,Column-F,10
+Column-E,Column-F,7
+Column-F,Dispatch,12

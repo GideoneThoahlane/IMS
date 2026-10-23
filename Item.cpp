@@ -1,5 +1,6 @@
 #include "Item.h"
-
+#include <iomanip>
+#include <string>
 using namespace std;
 
 Item::Item() {
@@ -34,13 +35,24 @@ void Item::setQuantity(int qty) { quantity = qty; }
 void Item::setUnitPrice(double price) { unitPrice = price; }
 void Item::setLocation(string loc) { location = loc; }
 
+//void Item::display() {
+//    cout << itemId << "\t"
+//         << (name.length() > 20 ? name.substr(0, 17) + "..." : name) << "\t\t"
+//         << category << "\t\t"
+//         << quantity << "\t$"
+//         << unitPrice << "\t"
+//         << location << "\n";
+//}
+
 void Item::display() {
-    cout << itemId << "\t"
-         << (name.length() > 20 ? name.substr(0, 17) + "..." : name) << "\t\t"
-         << category << "\t\t"
-         << quantity << "\t$"
-         << unitPrice << "\t"
-         << location << "\n";
+    cout << left
+         << setw(12) << itemId
+         << setw(28) << name
+         << setw(32) << category
+         << right << setw(8) << quantity
+         << setw(12) << fixed << setprecision(2) << unitPrice
+         << "  " << left << location
+         << '\n';
 }
 
 string Item::serialize() {

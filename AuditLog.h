@@ -9,7 +9,6 @@ using namespace std;
 
 class LogEntry {
 private:
-    string timestamp;
     string username;
     string role;
     string action;
@@ -17,9 +16,8 @@ private:
 
 public:
     LogEntry();
-    LogEntry(string ts, string u, string r, string a, string d);
+    LogEntry(string u, string r, string a, string d);
 
-    string getTimestamp();
     string getUsername();
     string getRole();
     string getAction();
@@ -39,8 +37,7 @@ public:
     AuditLog(string path);
 
     void record(string username, string role, string action, string details);
-    void displayLogs(int maxCount = 20);
-    void clearLogs();
+    void displayLogs();
 };
 
 #endif

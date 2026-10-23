@@ -64,6 +64,7 @@ public:
     void clear();
 
     void displayAll();
+    int getMaxOrderIdNumber();
     void loadFromFile(string filePath);
     void saveToFile(string filePath);
 };
