@@ -54,6 +54,21 @@ The system then loads role-based dashboards for:
 - Audit logging for important actions and access events
 - File-based persistence for users, inventory, orders, locations, and audit trails
 
+## Tester login accounts
+
+The system includes default test users for quick login:
+
+```text
+Palesa,M1234,Store Manager,Palesa Selepe
+Neo,C1234,Cashier,Neo Sello
+Bob,A1234,System Administrator,Bob Tau
+```
+
+Use these credentials when testing the role-based dashboards:
+- `Palesa` / `M1234` → Store Manager
+- `Neo` / `C1234` → Cashier
+- `Bob` / `A1234` → System Administrator
+
 ## Project structure
 
 The main application starts in `main.cpp` and connects the system components together. The project uses separate header and source files for each major component, including:
