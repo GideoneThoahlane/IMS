@@ -7,3 +7,9 @@ Bob|System Administrator|AUTH_LOGIN|Login success
 Bob|System Administrator|AUTH_LOGIN|Login success
 Bob|System Administrator|AUTH_LOGIN|Login success
 Bob|System Administrator|AUTH_LOGIN|Login success
+Palesa|Store Manager|AUTH_LOGIN|Login success
+Palesa|Store Manager|AUTH_LOGOUT|User logged out
+Palesa|Store Manager|AUTH_LOGIN|Login success
+Palesa|Store Manager|AUTH_LOGOUT|User logged out
+Palesa|Store Manager|AUTH_LOGIN|Login success
+Palesa|Store Manager|AUTH_LOGOUT|User logged out
